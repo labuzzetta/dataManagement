@@ -5,11 +5,12 @@
 \alias{species_bad}
 \title{Species - Bad Data Management}
 \format{A data.frame with the following columns:
-
-  \code{ID}: Unique integer ID of bird species - Note is an integer ID
-             needed if the species abbreviation is unique?
-                   
-  \code{species Abbreviation}: Four letter abbreviation of species - Note space in column name
+  
+  \code{ID}: Unique integer ID of bird species - Note is an integer ID needed
+  if the species abbreviation is unique?
+  
+  \code{species Abbreviation}: Four letter abbreviation of species - Note
+  space in column name
   
   \code{genus}: Genus of bird
   
