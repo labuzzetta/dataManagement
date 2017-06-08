@@ -1,4 +1,4 @@
-Package: data_management
+Package: dataManagement
 Title: Data Management
 Version: 1.0.0
 Authors@R: person("Charlie", "Labuzzetta", email = "clabuzze@iastate.edu", role = c("aut", "cre"))
