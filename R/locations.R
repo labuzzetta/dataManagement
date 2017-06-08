@@ -1,0 +1,26 @@
+#' Locations
+#' 
+#' Contains data regarding the locations in which the observers watched for 
+#' birds, including geographical location and other metadata
+#' 
+#' @format A data.frame with the following columns:
+#'   
+#'   \code{location_id}: Unique integer id of location
+#'   
+#'   \code{location_name}: Full word title of location
+#'   
+#'   \code{street_address}: Address and street name of location
+#'   
+#'   \code{city}: City of location
+#'   
+#'   \code{state}: State of location
+#'   
+#'   \code{country}: Country of location
+#'   
+#'   \code{zip_code}: Five digit zip code of location
+#'   
+#'   \code{latitude}: Latitude of location (decimal degrees)
+#'   
+#'   \code{longitude}: Longitude of location (decimal degrees)
+#'   
+"locations"
