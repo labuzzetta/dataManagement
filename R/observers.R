@@ -14,4 +14,4 @@
 #'   
 #'   \code{email}: Full email address of observer
 #'   
-"observer"
+"observers"
