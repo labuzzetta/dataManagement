@@ -6,7 +6,7 @@ sighting_id,observer_id,location_id,species_id,date,visual_recognition,audio_rec
 5,213,2,CLSW,2016-06-03 21:43:00,yes,no,
 6,213,2,GHOW,2016-06-03 22:24:00,no,yes,territorial hooting
 7,492,1,EABL,2016-06-06 18:28:00,yes,no,
-8,213,1,AMRO,2016-06-17 14:43:00,yes,yes
+8,213,1,AMRO,2016-06-17 14:43:00,yes,yes,
 9,213,1,GBHE,2016-06-17 15:07:00,yes,no,
 10,213,1,PUFI,2016-06-17 15:45:00,yes,no,
 11,213,1,EABL,2016-06-17 16:00:00,yes,no,
