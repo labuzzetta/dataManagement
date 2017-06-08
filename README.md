@@ -19,6 +19,12 @@ Make sure the following dependencies are installed:
 - *tidyr*
 - *lubridate*
 
+```{r}
+
+install.packages("insert_package_name")
+
+```
+
 ## Exploring this package
 
-
+Details to come...
