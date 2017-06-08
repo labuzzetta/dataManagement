@@ -6,10 +6,8 @@ Data package with example database management vignettes, presentation, and datas
 Install the package from github using devtools:
 
 ```{r}
-
 library(devtools)
 install_github("clabuzze/data_management")
-
 ```
 
 Make sure the following dependencies are installed:
@@ -20,9 +18,7 @@ Make sure the following dependencies are installed:
 - *lubridate*
 
 ```{r}
-
 install.packages("insert_package_name")
-
 ```
 
 ## Exploring this package
