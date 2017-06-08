@@ -1,4 +1,4 @@
-# data_management
+# dataManagement
 Data package with example database management vignettes, presentation, and datasets
 
 ## Installing this package
