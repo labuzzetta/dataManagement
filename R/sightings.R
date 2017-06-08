@@ -22,4 +22,4 @@
 #'   
 #'   \code{comments}: Miscellaneous comments (NA if none)
 #'   
-"species"
+"sightings"
