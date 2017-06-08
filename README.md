@@ -1,4 +1,4 @@
-# data_management
+# dataManagement
 Data package with example database management vignettes, presentation, and datasets
 
 ## Installing this package
@@ -7,7 +7,7 @@ Install the package from github using devtools:
 
 ```{r}
 library(devtools)
-install_github("clabuzze/data_management")
+install_github("clabuzze/dataManagement")
 ```
 
 Make sure the following dependencies are installed:
