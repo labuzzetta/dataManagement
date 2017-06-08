@@ -1,0 +1,4 @@
+location_id,location_name,street_address,city,state,country,zip_code,latitude,longitude
+1,Riverside Park,100 State St,La Crosse,WI,USA,54601,43.814025,-91.253061
+2,Backyard,845 Cliffwood Ln,La Crosse,WI,USA,54601,43.803684,-91.211752
+3,Backyard,418 Red Apple Dr,La Crescent,MN,USA,55947,43.845510,-91.308156

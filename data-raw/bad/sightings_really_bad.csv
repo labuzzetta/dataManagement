@@ -1,0 +1,5 @@
+Observer,Location,Lat,Lon,SPECIES_1,Date_1,Time_1,How recognized?_1,SPECIES_2,Date_2,Time_2,How recognized?_2,SPECIES_3,Date_3,Time_3,How recognized?_3,SPECIES_4,Date_4,Time_4,How recognized?_4,comments
+JD,Riverside,43.814025,-91.253061,AMRO,2016-05-11,01/01/1899 19:01:00,Visual,EABL,2016-05-11,01/01/1899 19:53:00,visual,EABL,2016-06-06,01/01/1899 18:28:00,visual,,,,,
+Jd,Backyard,43.845510,-91.308156,AMGO,2016-05-17,01/01/1899 06:55:00,Visual,AMGO,2016-06-18,01/01/1899 07:42:00,visual,,,,,,,,,
+mj,Backyard,43.803684,-91.211752,DOWO,2016-05-16,01/01/1899 16:27:00,Visual,CLSW,2016-06-03,01/01/1899 21:43:00,visual,GHOW,2016-06-03,01/01/1899 22:24:00,auditory,,,,,,,,,
+MJ,in Riverside park,43.814025,-91.253061,AMRO,2016-06-17,01/01/1899 14:43:00,heard it,GBHE,2016-06-17,01/01/1899 15:07:00,visual,PUFI,2016-06-17,01/01/1899 15:45:00,visual,EABL,2016-06-17,01/01/1899 16:00:00,visual,
