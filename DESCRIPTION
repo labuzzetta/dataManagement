@@ -5,10 +5,8 @@ Authors@R: person("Charlie", "Labuzzetta", email = "clabuzze@iastate.edu", role 
 Description: Data package with example database management vignettes, presentation, and datasets
 Depends:
   R (>= 3.0)
-Suggests:
-  dplyr,
-tidyr,
-knitr,
+Suggests: dplyr,
+tidyr, knitr,
 rmarkdown,
 lubridate,
 readr
