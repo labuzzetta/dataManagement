@@ -72,6 +72,9 @@ Consider viewing the Beamer presentation in the /presentation directory
 4. The presentation should appear in a new window
 5. In that window, select "More" -> "View in Browser" for better display
 
+Note: the R-Markdown version of the presentation ("presentation.md") can also be 
+viewed in document format.
+
 Look at the following datasets and their documentation as examples:
 - *full*
 - *locations*
