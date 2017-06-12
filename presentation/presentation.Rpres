@@ -146,3 +146,87 @@ Database Design - Thought Process
 ========================================================
 
 How to think about database design:
+
+- A database holds info about objects, events, observations
+- A **Relational Database** uses ID's to link entries together
+
+*A Simple Example:*
+
+Single Table Format:
+
+| type  | color | store_1_price | store_2_price |
+|-------|-------|---------------|---------------|
+| apple | red   | 0.29          | 0.27          |
+
+ ***
+ 
+Database Format:
+
+**Fruits**
+
+| fruit_id | type  | color |
+|----|-------|-------|
+| 29 | apple | red   |
+
+**Stores**
+
+| fruit_id | price | store_id |
+|----|-------|----------|
+| 29 | 0.29  | 1        |
+| 29 | 0.27  | 2        |
+
+
+Database Design - A More Complex Example
+========================================================
+
+Consider the following scenario:
+- An organization wants to have a bird watching competition
+- Competitors will register with:
+  - Name, Birthday, Email
+- Competitors will record where, when and which birds they see
+  - List of locations (Name, Address, GPS Coordinates)
+  - List of observations (Who, When, Where, Which Species, Observation details)
+  - List of all species observed (Common Name, Species, Genus)
+  
+How could this data be managed?
+
+
+Example - Not the best management
+========================================================
+
+```{r echo=FALSE}
+  
+kable(dplyr::select(dataManagement::sightings_really_bad, 
+                    Observer, Location,
+                    SPECIES_1, Date_1, Time_1,
+                    SPECIES_2, Date_2, Time_2))
+
+```
+
+Avoid using repetitive groups of columns
+
+See dataManagement::sightings_really_bad for the full table.
+
+Example - Better Managements
+========================================================
+
+```{r echo=FALSE}
+
+library(dplyr)
+
+kable(dplyr::select(dataManagement::observers,
+                    -join_date))
+
+kable(dplyr::select(dataManagement::locations,
+                    -latitude, -longitude, -zip_code) %>%
+        filter(location_id != 2))
+
+kable(tail(dplyr::select(dataManagement::sightings, 
+                    -visual_recognition, -audio_recognition, -comments), n=2L))
+
+t <- dataManagement::species %>%
+        filter(species_id == "EABL" | species_id == "AMGO")
+
+kable(t)
+
+```

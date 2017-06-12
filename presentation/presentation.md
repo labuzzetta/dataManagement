@@ -1,7 +1,7 @@
 Data Management Tips
 ========================================================
 author: Charlie Labuzzetta
-date: June 08, 2017
+date: June 12, 2017
 autosize: true
 incremental: true
 depends: dplyr, dataManagement, tidyr
@@ -200,3 +200,92 @@ Database Design - Thought Process
 ========================================================
 
 How to think about database design:
+
+- A database holds info about objects, events, observations
+- A **Relational Database** uses ID's to link entries together
+
+*A Simple Example:*
+
+Single Table Format:
+
+| type  | color | store_1_price | store_2_price |
+|-------|-------|---------------|---------------|
+| apple | red   | 0.29          | 0.27          |
+
+ ***
+ 
+Database Format:
+
+**Fruits**
+
+| fruit_id | type  | color |
+|----|-------|-------|
+| 29 | apple | red   |
+
+**Stores**
+
+| fruit_id | price | store_id |
+|----|-------|----------|
+| 29 | 0.29  | 1        |
+| 29 | 0.27  | 2        |
+
+
+Database Design - A More Complex Example
+========================================================
+
+Consider the following scenario:
+- An organization wants to have a bird watching competition
+- Competitors will register with:
+  - Name, Birthday, Email
+- Competitors will record where, when and which birds they see
+  - List of locations (Name, Address, GPS Coordinates)
+  - List of observations (Who, When, Where, Which Species, Observation details)
+  - List of all species observed (Common Name, Species, Genus)
+  
+How could this data be managed?
+
+
+Example - Not the best management
+========================================================
+
+
+|Observer |Location          |SPECIES_1 |Date_1     |Time_1              |SPECIES_2 |Date_2     |Time_2              |
+|:--------|:-----------------|:---------|:----------|:-------------------|:---------|:----------|:-------------------|
+|JD       |Riverside         |AMRO      |2016-05-11 |01/01/1899 19:01:00 |EABL      |2016-05-11 |01/01/1899 19:53:00 |
+|Jd       |Backyard          |AMGO      |2016-05-17 |01/01/1899 06:55:00 |AMGO      |2016-06-18 |01/01/1899 07:42:00 |
+|mj       |Backyard          |DOWO      |2016-05-16 |01/01/1899 16:27:00 |CLSW      |2016-06-03 |01/01/1899 21:43:00 |
+|MJ       |in Riverside park |AMRO      |2016-06-17 |01/01/1899 14:43:00 |GBHE      |2016-06-17 |01/01/1899 15:07:00 |
+
+Avoid using repetitive groups of columns
+
+See dataManagement::sightings_really_bad for the full table.
+
+Example - Better Managements
+========================================================
+
+
+| observer_id|first_name |last_name |birth_date |email               |
+|-----------:|:----------|:---------|:----------|:-------------------|
+|         492|John       |Doe       |1987-09-03 |john.doe@gmail.com  |
+|         213|Mary       |Jane      |1959-02-27 |mary.jane@gmail.com |
+
+
+
+| location_id|location_name  |street_address   |city        |state |country |
+|-----------:|:--------------|:----------------|:-----------|:-----|:-------|
+|           1|Riverside Park |100 State St     |La Crosse   |WI    |USA     |
+|           3|Backyard       |418 Red Apple Dr |La Crescent |MN    |USA     |
+
+
+
+| sighting_id| observer_id| location_id|species_id |date                |
+|-----------:|-----------:|-----------:|:----------|:-------------------|
+|          11|         213|           1|EABL       |2016-06-17 16:00:00 |
+|          12|         492|           3|AMGO       |2016-06-18 07:42:00 |
+
+
+
+|species_id |genus  |species |common_name        |
+|:----------|:------|:-------|:------------------|
+|EABL       |Sialia |sialis  |Eastern Bluebird   |
+|AMGO       |Spinus |tristis |American Goldfinch |
