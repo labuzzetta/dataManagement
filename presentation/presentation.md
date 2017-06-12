@@ -289,3 +289,16 @@ Example - Better Managements
 |:----------|:------|:-------|:------------------|
 |EABL       |Sialia |sialis  |Eastern Bluebird   |
 |AMGO       |Spinus |tristis |American Goldfinch |
+
+Database Design
+========================================================
+
+Look further at the following tables and documentation:
+- dataManagement::observers
+- dataManagement::locations
+- dataManagement::sightings
+- dataManagement::species
+
+To view documentation for a dataset:
+- Use ? before the dataset name
+- Example: ?dataManagement::sightings

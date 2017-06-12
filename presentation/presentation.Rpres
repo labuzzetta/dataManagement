@@ -230,3 +230,16 @@ t <- dataManagement::species %>%
 kable(t)
 
 ```
+
+Database Design
+========================================================
+
+Look further at the following tables and documentation:
+- dataManagement::observers
+- dataManagement::locations
+- dataManagement::sightings
+- dataManagement::species
+
+To view documentation for a dataset:
+- Use ? before the dataset name
+- Example: ?dataManagement::sightings
