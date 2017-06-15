@@ -1,4 +1,4 @@
-sighting_id,observer_id,location_id,species_id,date,visual_recognition,audio_recognition,comments
+sighting_id,observer_id,location_id,species_id,date,visual_recognition,audio_recognition,comment
 1,492,1,AMRO,2016-05-11 19:01:00,yes,no,
 2,492,1,EABL,2016-05-11 19:53:00,yes,no,using bluebird house
 3,213,2,DOWO,2016-05-16 16:27:00,yes,yes,
