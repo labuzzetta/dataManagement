@@ -4,15 +4,15 @@ library(dplyr)
 library(tidyr)
 
 #read csv files
-locations <- readr::read_csv(file = "good/locations_good.csv")
-observers <- readr::read_csv(file = "good/observers_good.csv")
-sightings <- readr::read_csv(file = "good/sightings_good.csv")
+location <- readr::read_csv(file = "good/location_good.csv")
+observer <- readr::read_csv(file = "good/observer_good.csv")
+sighting <- readr::read_csv(file = "good/sighting_good.csv")
 species <- readr::read_csv(file = "good/species_good.csv")
 
 #combine datasets
-full <- left_join(x = sightings, y = locations, "location_id") %>%
-        left_join(y = observers, "observer_id") %>%
+full <- left_join(x = sighting, y = location, "location_id") %>%
+        left_join(y = observer, "observer_id") %>%
         left_join(y = species, "species_id")
 
 #Import datasets and save to package
-devtools::use_data(locations, observers, sightings, species, full, overwrite=TRUE)
+devtools::use_data(location, observer, sighting, species, full, overwrite=TRUE)

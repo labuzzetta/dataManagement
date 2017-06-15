@@ -286,12 +286,12 @@ See dataManagement::sightings_really_bad for the full table.
 
 Look further at the following tables and documentation:
 
-- dataManagement::observers
-- dataManagement::locations
-- dataManagement::sightings
+- dataManagement::observer
+- dataManagement::location
+- dataManagement::sighting
 - dataManagement::species
 
 To view documentation for a dataset:
 
 - Use ? before the dataset name
-- Example: ?dataManagement::sightings
+- Example: ?dataManagement::sighting

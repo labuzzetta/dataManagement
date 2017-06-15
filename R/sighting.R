@@ -1,4 +1,4 @@
-#' Sightings
+#' Sighting
 #' 
 #' Contains observations of birds by observers referenced to location and 
 #' species
@@ -22,4 +22,4 @@
 #'   
 #'   \code{comments}: Miscellaneous comments (NA if none)
 #'   
-"sightings"
+"sighting"

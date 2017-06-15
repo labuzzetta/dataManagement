@@ -40,9 +40,9 @@ View(dataManagement::package_name)
 
 After typing "View(dataManagment::" a list of all the datasets should appear:
 - *full*
-- *locations*
-- *observers*
-- *sightings*
+- *location*
+- *observer*
+- *sighting*
 - *sightings_bad*
 - *sightings_really_bad*
 - *species*
@@ -77,9 +77,9 @@ viewed in document format.
 
 Look at the following datasets and their documentation as examples:
 - *full*
-- *locations*
-- *observers*
-- *sightings*
+- *location*
+- *observer*
+- *sighting*
 - *species*
 
 Consider learning about making your own R Data Package:

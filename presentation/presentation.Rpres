@@ -53,7 +53,7 @@ In the column names, look for:
   - lower case with underscores
   
 ```{r echo=FALSE}
-kable(dplyr::select(dataManagement::sightings, -comments))
+kable(dplyr::select(dataManagement::sighting, -comments))
 ```
 
 
@@ -102,7 +102,7 @@ Try to store dates and times in the same column
 
 ```{r echo=FALSE}
 
-kable(dplyr::select(dataManagement::sightings, -comments))
+kable(dplyr::select(dataManagement::sighting, -comments))
 
 ```
 
@@ -214,14 +214,14 @@ Example - Better Managements
 
 library(dplyr)
 
-kable(dplyr::select(dataManagement::observers,
+kable(dplyr::select(dataManagement::observer,
                     -join_date))
 
-kable(dplyr::select(dataManagement::locations,
+kable(dplyr::select(dataManagement::location,
                     -latitude, -longitude, -zip_code) %>%
         filter(location_id != 2))
 
-kable(tail(dplyr::select(dataManagement::sightings, 
+kable(tail(dplyr::select(dataManagement::sighting, 
                     -visual_recognition, -audio_recognition, -comments), n=2L))
 
 t <- dataManagement::species %>%
@@ -235,11 +235,11 @@ Database Design
 ========================================================
 
 Look further at the following tables and documentation:
-- dataManagement::observers
-- dataManagement::locations
-- dataManagement::sightings
+- dataManagement::observer
+- dataManagement::location
+- dataManagement::sighting
 - dataManagement::species
 
 To view documentation for a dataset:
 - Use ? before the dataset name
-- Example: ?dataManagement::sightings
+- Example: ?dataManagement::sighting

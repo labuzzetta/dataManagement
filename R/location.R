@@ -1,4 +1,4 @@
-#' Locations
+#' Location
 #' 
 #' Contains data regarding the locations in which the observers watched for 
 #' birds, including geographical location and other metadata
@@ -23,4 +23,4 @@
 #'   
 #'   \code{longitude}: Longitude of location (decimal degrees)
 #'   
-"locations"
+"location"
