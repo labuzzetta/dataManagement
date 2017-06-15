@@ -64,16 +64,10 @@ be wrong with each of them
 
 ### How to better manage data
 
-Consider viewing the Beamer presentation in the /presentation directory
-1. Navigate to the /presentation directory in the dataManagement package
-2. Open the presentation.Rpres file
-3. Click "Preview" next to the Icon that looks like an "Arrow and World on
-   Sheet of Paper" in the toolbar under the open tab for presentation.Rpres
-4. The presentation should appear in a new window
-5. In that window, select "More" -> "View in Browser" for better display
+Consider viewing the "Data Management Tips" vignette:
 
-Note: the R-Markdown version of the presentation ("presentation.md") can also be 
-viewed in document format.
+1. Enter "browseVignettes('dataManagement')" in the Console window
+2. Select the HTML link for the "Data Management Tips" Vignette
 
 Look at the following datasets and their documentation as examples:
 - *full*
