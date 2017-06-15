@@ -1,22 +1,15 @@
 ---
-output:
-  word_document: default
-  pdf_document: default
-  html_document: default
+title: "Data Management Tips"
+author: "Charlie Labuzzetta"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
-Data Management Tips
-========================================================
-author: Charlie Labuzzetta
-date: June 15, 2017
-autosize: true
-incremental: true
-depends: dplyr, dataManagement, tidyr
 
-
-STRIPS-2 Data
-========================================================
-
-![caption](strips.png) ![caption](github.png)
+#STRIPS-2 Data
 
 - Over 350,000 collected datapoints
 - Over 20,000 quadrat estimations
@@ -25,26 +18,25 @@ STRIPS-2 Data
 ## And that's just 2015-2016!
 
 
-How to Make Data Storage and Analysis Easier?
-========================================================
+#How to Make Data Storage and Analysis Easier?
 
 - Naming Standards
-  - Filenames
-  - Column names
+    1. Filenames
+    2. Column names
 - Data Types
-  - Dates
-  - Booleans vs. Yes/No
+    1. Dates
+    2. Booleans vs. Yes/No
 - Database Design
-  - When to make a new table?
-  - To ID or not to ID
+    1. When to make a new table?
+    2. To ID or not to ID
 
 
-Naming Standards - Poor Example
-========================================================
+#Naming Standards - Poor Example
 
 In the column names, look for:
-  - Inconsistency
-  - Spaces / Weird Characters
+
+- Inconsistency
+- Spaces / Weird Characters
 
 
 |Observer |Location          |SPECIES |Date       |Time                | distance(m)|How recognized? | making sound|
@@ -63,12 +55,12 @@ In the column names, look for:
 |Jd       |yard              |AMGO    |2016-06-18 |07:42:00            |          23|visual          |            0|
 
 
-Naming Standards - Better?
-========================================================
+#Naming Standards - Better?
 
 In the column names, look for:
-  - full words
-  - lower case with underscores
+
+- full words
+- lower case with underscores
   
 
 | sighting_id| observer_id| location_id|species_id |date                |visual_recognition |audio_recognition |
@@ -87,30 +79,30 @@ In the column names, look for:
 |          12|         492|           3|AMGO       |2016-06-18 07:42:00 |yes                |no                |
 
 
-Discussion - Naming Standards
-========================================================
+#Discussion - Naming Standards
 
 There are many ways to name files / columns with consistency:
-  - lowercase_underscore
-  - camelCaseNoSpaces
-  - CapitalizeEveryWord
-  - PLEASE_DONT_DO_THIS
+
+- lowercase_underscore
+- camelCaseNoSpaces
+- CapitalizeEveryWord
+- PLEASE_DONT_DO_THIS
   
 **Suggestion:** lowercase_underscore
 
 Important People in the "R" World suggest: http://r-pkgs.had.co.nz/style.html
 
 
-Data Types - Dates
-========================================================
+#Data Types - Dates
 
 Confession: Dates are the worst...
 
 There are so many ways to store dates:
-  - 2000-07-04 14:00:00
-  - 2000-07-04 2:00 PM
-  - 2000/07/04 02:00:00 PM
-  - 04/07/2000
+
+- 2000-07-04 14:00:00
+- 2000-07-04 2:00 PM
+- 2000/07/04 02:00:00 PM
+- 04/07/2000
 
 
 |Observer |Location          |SPECIES |Date       |Time                | distance(m)|How recognized? | making sound|
@@ -128,13 +120,13 @@ There are so many ways to store dates:
 |mj       |RP                |EABL    |2016-06-17 |16:00:00            |          34|visual          |            0|
 |Jd       |yard              |AMGO    |2016-06-18 |07:42:00            |          23|visual          |            0|
   
-Data Types - Dates
-========================================================
+#Data Types - Dates
 
 **Suggestion:** When possible, YYYY-mm-dd hh:mm:ss
-  - Stores in chronological order
-  - Bypasses AM/PM Errors
-  - Reduces Month/Day confusion
+
+- Stores in chronological order
+- Bypasses AM/PM Errors
+- Reduces Month/Day confusion
   
 **Suggestion:** If using R, look into the *lubridate* package
 
@@ -157,13 +149,13 @@ Try to store dates and times in the same column
 |          12|         492|           3|AMGO       |2016-06-18 07:42:00 |yes                |no                |
 
 
-Data Types - Units
-========================================================
+#Data Types - Units
 
 How/where should measurement units be stored?
-  - Avoid putting units in column names
-  - Make documentation / metadata files
-  - Consider changing booleans to "Yes"/"No"
+
+- Avoid putting units in column names
+- Make documentation / metadata files
+- Consider changing booleans to "Yes"/"No"
   
 Look at Jarad Niemi's RDataPackageTemplate: https://github.com/jarad/RDataPackageTemplate
 
@@ -186,24 +178,23 @@ What's wrong with the table below?
 |Jd       |yard              |AMGO    |2016-06-18 |07:42:00            |          23|visual          |            0|
 
 
-Database Design - Goals
-========================================================
-
+#Database Design - Goals
 
 A good database will (be):
-  - Reduce Redundancy
-  - Reduce NA's
-  - Easy to Manipulate
+
+- Reduce Redundancy
+- Reduce NA's
+- Easy to Manipulate
   
 Again, when making an R Data Package, look at: https://github.com/jarad/RDataPackageTemplate
-  - Store raw data in /data-raw
-  - Clean raw data with R scripts
-  - Import clean data to R package
-  - Easily manipulate and analyze clean data
+
+- Store raw data in /data-raw
+- Clean raw data with R scripts  
+- Import clean data to R package
+- Easily manipulate and analyze clean data
   
   
-Database Design - Thought Process
-========================================================
+#Database Design - Thought Process
 
 How to think about database design:
 
@@ -218,8 +209,7 @@ Single Table Format:
 |-------|-------|---------------|---------------|
 | apple | red   | 0.29          | 0.27          |
 
- ***
- 
+
 Database Format:
 
 **Fruits**
@@ -236,24 +226,22 @@ Database Format:
 | 29 | 0.27  | 2        |
 
 
-Database Design - A More Complex Example
-========================================================
+#Database Design - A More Complex Example
 
 Consider the following scenario:
+
 - An organization wants to have a bird watching competition
 - Competitors will register with:
-  - Name, Birthday, Email
+    - Name, Birthday, Email
 - Competitors will record where, when and which birds they see
-  - List of locations (Name, Address, GPS Coordinates)
-  - List of observations (Who, When, Where, Which Species, Observation details)
-  - List of all species observed (Common Name, Species, Genus)
+    - List of locations (Name, Address, GPS Coordinates)
+    - List of observations (Who, When, Where, Which Species, Observation details)
+    - List of all species observed (Common Name, Species, Genus)
   
 How could this data be managed?
 
 
-Example - Not the best management
-========================================================
-
+#Example - Not the best management
 
 |Observer |Location          |SPECIES_1 |Date_1     |Time_1              |SPECIES_2 |Date_2     |Time_2              |
 |:--------|:-----------------|:---------|:----------|:-------------------|:---------|:----------|:-------------------|
@@ -266,9 +254,7 @@ Avoid using repetitive groups of columns
 
 See dataManagement::sightings_really_bad for the full table.
 
-Example - Better Managements
-========================================================
-
+#Example - Better Management
 
 | observer_id|first_name |last_name |birth_date |email               |
 |-----------:|:----------|:---------|:----------|:-------------------|
@@ -296,15 +282,16 @@ Example - Better Managements
 |EABL       |Sialia |sialis  |Eastern Bluebird   |
 |AMGO       |Spinus |tristis |American Goldfinch |
 
-Database Design
-========================================================
+#Database Design
 
 Look further at the following tables and documentation:
+
 - dataManagement::observers
 - dataManagement::locations
 - dataManagement::sightings
 - dataManagement::species
 
 To view documentation for a dataset:
+
 - Use ? before the dataset name
 - Example: ?dataManagement::sightings
