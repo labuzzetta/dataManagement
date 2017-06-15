@@ -1,9 +1,3 @@
----
-output:
-  word_document: default
-  pdf_document: default
-  html_document: default
----
 Data Management Tips
 ========================================================
 author: Charlie Labuzzetta
@@ -300,11 +294,11 @@ Database Design
 ========================================================
 
 Look further at the following tables and documentation:
-- dataManagement::observers
-- dataManagement::locations
-- dataManagement::sightings
+- dataManagement::observer
+- dataManagement::location
+- dataManagement::sighting
 - dataManagement::species
 
 To view documentation for a dataset:
 - Use ? before the dataset name
-- Example: ?dataManagement::sightings
+- Example: ?dataManagement::sighting

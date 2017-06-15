@@ -53,7 +53,7 @@ In the column names, look for:
   - lower case with underscores
   
 ```{r echo=FALSE}
-kable(dplyr::select(dataManagement::sighting, -comments))
+kable(dplyr::select(dataManagement::sighting, -comment))
 ```
 
 
@@ -102,7 +102,7 @@ Try to store dates and times in the same column
 
 ```{r echo=FALSE}
 
-kable(dplyr::select(dataManagement::sighting, -comments))
+kable(dplyr::select(dataManagement::sighting, -comment))
 
 ```
 
@@ -222,7 +222,7 @@ kable(dplyr::select(dataManagement::location,
         filter(location_id != 2))
 
 kable(tail(dplyr::select(dataManagement::sighting, 
-                    -visual_recognition, -audio_recognition, -comments), n=2L))
+                    -visual_recognition, -audio_recognition, -comment), n=2L))
 
 t <- dataManagement::species %>%
         filter(species_id == "EABL" | species_id == "AMGO")
