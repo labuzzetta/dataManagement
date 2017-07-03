@@ -98,8 +98,6 @@ Important People in the "R" World suggest: http://r-pkgs.had.co.nz/style.html
 Data Types - Dates
 ========================================================
 
-Confession: Dates are the worst...
-
 There are so many ways to store dates:
   - 2000-07-04 14:00:00
   - 2000-07-04 2:00 PM
@@ -107,55 +105,55 @@ There are so many ways to store dates:
   - 04/07/2000
 
 
-|Observer |Location          |SPECIES |Date       |Time                | distance(m)|How recognized? | making sound|
-|:--------|:-----------------|:-------|:----------|:-------------------|-----------:|:---------------|------------:|
-|JD       |Riverside         |AMRO    |2016-05-11 |1899-01-01 19:01:00 |          45|Visual          |            0|
-|JD       |Riverside Park    |EABL    |05/11/2016 |1899-01-01 19:53:00 |          90|visual          |            0|
-|mj       |Backyard          |DOWO    |2016-05-16 |1899-01-01 16:27:00 |          24|Visual          |            1|
-|Jd       |Backyard          |AMGO    |05-17-2016 |1899-01-01 06:55:00 |          53|Visual          |            0|
-|Mj       |backyard          |CLSW    |2016-06-03 |1899-01-01 21:43:00 |          31|visual          |            0|
-|Mj       |backyard          |GHOW    |06-03-2016 |1899-01-01 22:24:00 |          20|auditory        |            1|
-|jd       |Park              |EABL    |06/06/2016 |1899-01-01 18:28:00 |          34|visual          |            0|
-|MJ       |in Riverside park |AMRO    |2016-06-17 |1899-01-01 14:43:00 |          20|heard it        |            1|
-|MJ       |Riverside         |GBHE    |2016-06-17 |1899-01-01 15:07:00 |          60|visual          |            0|
-|mj       |RP                |PUFI    |06/17/2016 |15:45:00            |          40|visual          |            0|
-|mj       |RP                |EABL    |2016-06-17 |16:00:00            |          34|visual          |            0|
-|Jd       |yard              |AMGO    |2016-06-18 |07:42:00            |          23|visual          |            0|
+|Observer |Location          |SPECIES |Date       |Time                | distance-meters|How recognized? | making sound|
+|:--------|:-----------------|:-------|:----------|:-------------------|---------------:|:---------------|------------:|
+|JD       |Riverside         |AMRO    |2016-05-11 |1899-01-01 19:01:00 |              45|Visual          |            0|
+|JD       |Riverside Park    |EABL    |05/11/2016 |1899-01-01 19:53:00 |              90|visual          |            0|
+|mj       |Backyard          |DOWO    |2016-05-16 |1899-01-01 16:27:00 |              24|Visual          |            1|
+|Jd       |Backyard          |AMGO    |05-17-2016 |1899-01-01 06:55:00 |              53|Visual          |            0|
+|Mj       |backyard          |CLSW    |2016-06-03 |1899-01-01 21:43:00 |              31|visual          |            0|
+|Mj       |backyard          |GHOW    |06-03-2016 |1899-01-01 22:24:00 |              20|auditory        |            1|
+|jd       |Park              |EABL    |06/06/2016 |1899-01-01 18:28:00 |              34|visual          |            0|
+|MJ       |in Riverside park |AMRO    |2016-06-17 |1899-01-01 14:43:00 |              20|heard it        |            1|
+|MJ       |Riverside         |GBHE    |2016-06-17 |1899-01-01 15:07:00 |              60|visual          |            0|
+|mj       |RP                |PUFI    |06/17/2016 |15:45:00            |              40|visual          |            0|
+|mj       |RP                |EABL    |2016-06-17 |16:00:00            |              34|visual          |            0|
+|Jd       |yard              |AMGO    |2016-06-18 |07:42:00            |              23|visual          |            0|
   
 Data Types - Dates
 ========================================================
 
-**Suggestion:** When possible, YYYY-mm-dd hh:mm:ss
+**Suggestion:** When possible, YYYY-mm-dd or YYYY/mm/dd or YYYYmmdd, and hh:mm:ss or hhmmss
   - Stores in chronological order
   - Bypasses AM/PM Errors
   - Reduces Month/Day confusion
+  - May be combined into a single column when analyzing raw data
+  
+Main objective: Choose *one* preferred format
   
 **Suggestion:** If using R, look into the *lubridate* package
 
-Try to store dates and times in the same column
-
-
-| sighting_id| observer_id| location_id|species_id |date                |visual_recognition |audio_recognition |
-|-----------:|-----------:|-----------:|:----------|:-------------------|:------------------|:-----------------|
-|           1|         492|           1|AMRO       |2016-05-11 19:01:00 |yes                |no                |
-|           2|         492|           1|EABL       |2016-05-11 19:53:00 |yes                |no                |
-|           3|         213|           2|DOWO       |2016-05-16 16:27:00 |yes                |yes               |
-|           4|         492|           3|AMGO       |2016-05-17 06:55:00 |yes                |no                |
-|           5|         213|           2|CLSW       |2016-06-03 21:43:00 |yes                |no                |
-|           6|         213|           2|GHOW       |2016-06-03 22:24:00 |no                 |yes               |
-|           7|         492|           1|EABL       |2016-06-06 18:28:00 |yes                |no                |
-|           8|         213|           1|AMRO       |2016-06-17 14:43:00 |yes                |yes               |
-|           9|         213|           1|GBHE       |2016-06-17 15:07:00 |yes                |no                |
-|          10|         213|           1|PUFI       |2016-06-17 15:45:00 |yes                |no                |
-|          11|         213|           1|EABL       |2016-06-17 16:00:00 |yes                |no                |
-|          12|         492|           3|AMGO       |2016-06-18 07:42:00 |yes                |no                |
+| sighting_id| observer_id| location_id|species_id |date          |time        |visual_recognition |audio_recognition |
+|-----------:|-----------:|-----------:|:----------|:-------------|:-----------|:------------------|:-----------------|
+|           1|         492|           1|AMRO       |2016-05-11    |19:01:00    |yes                |no                |
+|           2|         492|           1|EABL       |2016-05-11    |19:53:00    |yes                |no                |
+|           3|         213|           2|DOWO       |2016-05-16    |16:27:00    |yes                |yes               |
+|           4|         492|           3|AMGO       |2016-05-17    |06:55:00    |yes                |no                |
+|           5|         213|           2|CLSW       |2016-06-03    |21:43:00    |yes                |no                |
+|           6|         213|           2|GHOW       |2016-06-03    |22:24:00    |no                 |yes               |
+|           7|         492|           1|EABL       |2016-06-06    |18:28:00    |yes                |no                |
+|           8|         213|           1|AMRO       |2016-06-17    |14:43:00    |yes                |yes               |
+|           9|         213|           1|GBHE       |2016-06-17    |15:07:00    |yes                |no                |
+|          10|         213|           1|PUFI       |2016-06-17    |15:45:00    |yes                |no                |
+|          11|         213|           1|EABL       |2016-06-17    |16:00:00    |yes                |no                |
+|          12|         492|           3|AMGO       |2016-06-18    |07:42:00    |yes                |no                |
 
 
 Data Types - Units
 ========================================================
 
 How/where should measurement units be stored?
-  - Avoid putting units in column names
+  - In raw data, store the unit as full words with underscores in the column name after a dash
   - Make documentation / metadata files
   - Consider changing booleans to "Yes"/"No"
   
@@ -164,20 +162,20 @@ Look at Jarad Niemi's RDataPackageTemplate: https://github.com/jarad/RDataPackag
 What's wrong with the table below?
 
 
-|Observer |Location          |SPECIES |Date       |Time                | distance(m)|How recognized? | making sound|
-|:--------|:-----------------|:-------|:----------|:-------------------|-----------:|:---------------|------------:|
-|JD       |Riverside         |AMRO    |2016-05-11 |1899-01-01 19:01:00 |          45|Visual          |            0|
-|JD       |Riverside Park    |EABL    |05/11/2016 |1899-01-01 19:53:00 |          90|visual          |            0|
-|mj       |Backyard          |DOWO    |2016-05-16 |1899-01-01 16:27:00 |          24|Visual          |            1|
-|Jd       |Backyard          |AMGO    |05-17-2016 |1899-01-01 06:55:00 |          53|Visual          |            0|
-|Mj       |backyard          |CLSW    |2016-06-03 |1899-01-01 21:43:00 |          31|visual          |            0|
-|Mj       |backyard          |GHOW    |06-03-2016 |1899-01-01 22:24:00 |          20|auditory        |            1|
-|jd       |Park              |EABL    |06/06/2016 |1899-01-01 18:28:00 |          34|visual          |            0|
-|MJ       |in Riverside park |AMRO    |2016-06-17 |1899-01-01 14:43:00 |          20|heard it        |            1|
-|MJ       |Riverside         |GBHE    |2016-06-17 |1899-01-01 15:07:00 |          60|visual          |            0|
-|mj       |RP                |PUFI    |06/17/2016 |15:45:00            |          40|visual          |            0|
-|mj       |RP                |EABL    |2016-06-17 |16:00:00            |          34|visual          |            0|
-|Jd       |yard              |AMGO    |2016-06-18 |07:42:00            |          23|visual          |            0|
+|Observer |Location          |SPECIES |Date       |Time                | distance-meters|How recognized? | making sound|
+|:--------|:-----------------|:-------|:----------|:-------------------|---------------:|:---------------|------------:|
+|JD       |Riverside         |AMRO    |2016-05-11 |1899-01-01 19:01:00 |              45|Visual          |            0|
+|JD       |Riverside Park    |EABL    |05/11/2016 |1899-01-01 19:53:00 |              90|visual          |            0|
+|mj       |Backyard          |DOWO    |2016-05-16 |1899-01-01 16:27:00 |              24|Visual          |            1|
+|Jd       |Backyard          |AMGO    |05-17-2016 |1899-01-01 06:55:00 |              53|Visual          |            0|
+|Mj       |backyard          |CLSW    |2016-06-03 |1899-01-01 21:43:00 |              31|visual          |            0|
+|Mj       |backyard          |GHOW    |06-03-2016 |1899-01-01 22:24:00 |              20|auditory        |            1|
+|jd       |Park              |EABL    |06/06/2016 |1899-01-01 18:28:00 |              34|visual          |            0|
+|MJ       |in Riverside park |AMRO    |2016-06-17 |1899-01-01 14:43:00 |              20|heard it        |            1|
+|MJ       |Riverside         |GBHE    |2016-06-17 |1899-01-01 15:07:00 |              60|visual          |            0|
+|mj       |RP                |PUFI    |06/17/2016 |15:45:00            |              40|visual          |            0|
+|mj       |RP                |EABL    |2016-06-17 |16:00:00            |              34|visual          |            0|
+|Jd       |yard              |AMGO    |2016-06-18 |07:42:00            |              23|visual          |            0|
 
 
 Database Design - Goals
