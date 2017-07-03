@@ -7,7 +7,8 @@ library(tidyr)
 location <- readr::read_csv(file = "good/location_good.csv")
 observer <- readr::read_csv(file = "good/observer_good.csv")
 sighting <- readr::read_csv(file = "good/sighting_good.csv") %>%
-  mutate(date = paste(as.character(date), as.character(time), sep=" "))
+  mutate(date = paste(as.character(date), as.character(time), sep=" ")) %>%
+  select(-time)
 species <- readr::read_csv(file = "good/species_good.csv")
 
 #combine datasets
