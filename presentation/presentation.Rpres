@@ -3,35 +3,41 @@ Data Management Tips
 author: Charlie Labuzzetta
 date: September 2, 2020
 autosize: true
-incremental: true
+incremental: false
 depends: dplyr, dataManagement, tidyr
 
 What is Data Management?
 ========================================================
 
-3 R's:
+The 3 R's of Data Management:
 
 - Redundancy
-  - Backup your data safely!
+  - **Backup** your data safely!
 - Reliability
-  - Organize your files for efficient access
-  - Never change your raw data directly
+  - **Organize** your files for efficient access
+  - Never change your **raw data** directly
 - Reproducibility
-  - Metadata help others learn about your data
-  - Communicate edits to raw data via scripts
-  - Provide public access (when applicable)
+  - **Metadata** helps others learn about your data
+  - Communicate edits to raw data via **scripts**
+  - Provide **public access** (when applicable)
   
   
 Redundancy
 ========================================================
+incremental: true
 
-For important data / files, you should develop a backup system.
+For important data / files, you **need** to have a backup of your data (at least one, but preferrably more)!
+
+<div align="center">
+<img src="workstation.jpg" height=142> <img src="box.png" height=142> <img src="harddrive.jpg" height=142> <img src="github.png" height=142>
+</div>
 
 Example:
 
-- Files in (reliably) organized system on personal computer
-- File system synced automatically to cloud (BoxSync)
-- File system synced periodically to physical device (external hard-drive)
+- Files in (reliably) organized system on **personal computer**
+- File system synced automatically to cloud (**BoxSync**)
+- File system synced periodically to physical device (**external hard-drive**)
+- Scripts and data version control system (**GitHub**)
 
 
 STRIPS-2 Data
