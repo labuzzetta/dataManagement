@@ -38,4 +38,3 @@ sightings_bad
 Contains bird observations with bad formatting
 }
 \keyword{datasets}
-

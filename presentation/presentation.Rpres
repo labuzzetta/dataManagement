@@ -96,12 +96,72 @@ After you have a organized file system, you can worry about your research projec
   - Provide **public access** (when applicable)
 
 
-
-
-STRIPS-2 Data
+GitHub
 ========================================================
 
-![caption](strips.png) ![caption](github.png)
+GitHub is a web platform for **tracking changes to your computer codes and scripts**, that you should be using in combination with RStudio, whenever you work with data!
+
+<div align="center">
+<img src="github.png" height=142><img src="RStudio.png" height=142>
+</div>
+
+If you don't have an account: https://www.github.com
+
+Once you have an account, add the free education pack through ISU: https://education.github.com/pack
+- Free GitHub Pro while a student
+  - Extra Storage
+  - Create a free personal webpage (Example: https://labuzzetta.github.io)
+  - Private repositories
+  
+RStudio: Give up on Excel and learn R!
+========================================================
+
+<img src="rstudio_screenshot.png" height=800>
+
+
+R Data Projects
+========================================================
+
+Using GitHub and RStudio, you can create a data project which is:
+
+- Redundant: Backed up and tracked via GitHub
+
+- Reliable: Your raw data is **never altered** directly
+
+- Reproducible: Other scientists can easily understand and access your work
+
+<div align="center">
+<img src="github.png" height=142><img src="RStudio.png" height=142>
+</div>
+
+
+R Data Project Format
+========================================================
+
+Project Subdirectories:
+
+- **data-raw**: Put the .csv and other data files from your experiments here **NEVER TOUCH AGAIN**
+  - It is so important not to edit your raw data directly, even if the formatting is terrible.
+  - We can write R scripts to transform the raw data and clean it up. 
+  - The cleaned / transformed data is saved in a new location.
+  
+- **data**: Cleaned data tables, with nicely formated column names, data types, outliers removed
+
+- **R**: Metadata files which describe the cleaned data tables. Might include data units or collection methods
+
+- **vignettes**: Scripts that generate your analyses / graphics
+
+- **presentation**: Scripts to generate a presenetation with easy access to graphs / tables
+
+
+Example: STRIPS-2 Data
+========================================================
+
+<div align="center">
+<img src="strips.png" height=300>
+</div>
+
+Dr. Lisa Schulte-Moore's STRIPS (Science-based Trials of Rowcrops Integrated with Prairie Strips) Project is one group that has transitioned to using the R Data Package Format.
 
 - Over 350,000 collected datapoints
 - Over 20,000 quadrat estimations
@@ -109,9 +169,12 @@ STRIPS-2 Data
 
 ## And that's just 2015-2016!
 
+As an example, we will look into the challenges of storing and analyzing (fake) data similar to those collected by the STRIPS project and examine how the R Data Package format would be useful.
 
-How to Make Data Storage and Analysis Easier?
+Data storage and analysis
 ========================================================
+
+When we take a look back our raw data, there may be many inconsistencies that we'd like to change:
 
 - Naming Standards
   - Filenames
@@ -120,8 +183,8 @@ How to Make Data Storage and Analysis Easier?
   - Dates
   - Booleans vs. Yes/No
 - Database Design
-  - When to make a new table?
-  - To ID or not to ID
+  - Should I store everything in one table?
+  - Will my database design make it easy to analyze my data?
 
 
 Naming Standards - Poor Example
@@ -244,11 +307,11 @@ Data Types - Units
 ========================================================
 
 How/where should measurement units be stored?
-  - In raw data, store the unit as full words with underscores in the column name after a dash
-  - Make documentation / metadata files
+  - In raw data, note the unit as full words in the column name after a dash
+  - But we will want to remove these units from the polished data
+  - Put the units in documentation / metadata files
   - Consider changing booleans to "Yes"/"No"
-  
-Look at Jarad Niemi's RDataPackageTemplate: https://github.com/jarad/RDataPackageTemplate
+  - Use appropriate data types (integers vs decimals) and check your abbreviations
 
 What's wrong with the table below?
 
@@ -269,15 +332,9 @@ What's wrong with the table below?
 |Jd       |yard              |AMGO    |2016-06-18 |07:42:00            |              23|visual          |            0|
 
 
-Database Design - Goals
+R Data Package Review
 ========================================================
 
-
-A good database will (be):
-  - Reduce Redundancy
-  - Reduce NA's
-  - Easy to Manipulate
-  
 Again, when making an R Data Package, look at: https://github.com/jarad/RDataPackageTemplate
   - Store raw data in /data-raw
   - Clean raw data with R scripts
@@ -285,9 +342,9 @@ Again, when making an R Data Package, look at: https://github.com/jarad/RDataPac
   - Easily manipulate and analyze clean data
   
   
-Database Design - Thought Process
+Database Design - Making data easier to analyze
 ========================================================
-
+ 
 How to think about database design:
 
 - A database holds info about objects, events, observations
@@ -301,9 +358,11 @@ Single Table Format:
 |-------|-------|---------------|---------------|
 | apple | red   | 0.29          | 0.27          |
 
- ***
+
+Database Design - Making data easier to analyze
+========================================================
  
-Database Format:
+Instead we could use a relational database format:
 
 **Fruits**
 
@@ -382,6 +441,12 @@ Example - Better Managements
 Database Design
 ========================================================
 
+Relational database design helps to:
+- Reduce the amount of repeat data
+- Helps standardize data tables
+- Can reduce errors and NA entries
+- Makes it easier to understand the metadata / documentation files
+
 Look further at the following tables and documentation:
 - dataManagement::observer
 - dataManagement::location
@@ -391,3 +456,10 @@ Look further at the following tables and documentation:
 To view documentation for a dataset:
 - Use ? before the dataset name
 - Example: ?dataManagement::sighting
+
+Example R Data Project
+========================================================
+
+https://github.com/labuzzetta/apsimo
+
+<img src="apsimo.png" height=800>

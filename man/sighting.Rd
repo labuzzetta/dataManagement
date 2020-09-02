@@ -30,4 +30,3 @@ Contains observations of birds by observers referenced to location and
 species
 }
 \keyword{datasets}
-

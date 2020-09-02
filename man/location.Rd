@@ -31,4 +31,3 @@ Contains data regarding the locations in which the observers watched for
 birds, including geographical location and other metadata
 }
 \keyword{datasets}
-

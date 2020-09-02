@@ -59,4 +59,3 @@ full
 Merged dataset of observers, locations, sightings, and species tables
 }
 \keyword{datasets}
-

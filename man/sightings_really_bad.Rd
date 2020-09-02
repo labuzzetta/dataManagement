@@ -71,4 +71,3 @@ sightings_really_bad
 Contains bird observations with really bad formatting
 }
 \keyword{datasets}
-
