@@ -1,12 +1,26 @@
 Data Management Tips
 ========================================================
 author: Charlie Labuzzetta
-date: June 15, 2017
+date: September 2, 2020
 autosize: true
 incremental: true
 depends: dplyr, dataManagement, tidyr
 
+What is Data Management?
+========================================================
 
+3 R's:
+
+- Redundancy
+  - Backup your data safely!
+- Reliability
+  - Organize your files for efficient access
+  - Never change your raw data directly
+- Reproducibility
+  - Metadata help others learn about your data
+  - Communicate edits to raw data via scripts
+  - Provide public access (when applicable)
+ 
 STRIPS-2 Data
 ========================================================
 
