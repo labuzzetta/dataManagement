@@ -5,6 +5,8 @@ date: September 2, 2020
 autosize: true
 incremental: false
 depends: dplyr, dataManagement, tidyr
+width: 1440
+height: 900
 
 What is Data Management?
 ========================================================
@@ -463,3 +465,65 @@ Example R Data Project
 https://github.com/labuzzetta/apsimo
 
 <img src="apsimo.png" height=800>
+
+
+Review
+========================================================
+
+The 3 R's of Data Management:
+
+- Redundancy
+  - **Backup** your data safely!
+  - Use GitHub to **track changes** to files.
+- Reliability
+  - **Organize** your files for efficient access
+  - Never change your **raw data** directly
+- Reproducibility
+  - **Metadata** helps others learn about your data
+  - Communicate edits to raw data via **scripts**
+  - Provide **public access** (when applicable)
+  
+Action Items
+========================================================
+<div align="center">
+<img src="workstation.jpg" height=142> <img src="box.png" height=142> <img src="harddrive.jpg" height=142> <img src="github.png" height=142>
+</div>
+
+- Organize your personal file system
+
+- Backup your data and install BoxSync
+
+- Git your GitHub account and Github Education Pack
+
+- Store research data in R Data Packages
+
+- Never touch your raw data again!
+
+- Support reproducible research by sharing your repositories on GitHub
+
+
+Additional Topics
+========================================================
+
+- Introduction to RStudio
+
+- Introduction to GitHub
+
+- Making an R Data Package
+
+- Introduction to Tidyverse
+
+- Using GitHub within RStudio
+
+Accessing this presentation
+========================================================
+
+You can find this presentation and the associated data on my GitHub page:
+
+https://github.com/labuzzetta/dataManagement
+
+Instructions for installing the package from GitHub are listed on the webpage.
+
+A link to an online version of the presentation alone is:
+
+https://rpubs.com/clabuzze/datamanagement
