@@ -20,7 +20,20 @@ What is Data Management?
   - Metadata help others learn about your data
   - Communicate edits to raw data via scripts
   - Provide public access (when applicable)
- 
+  
+  
+Redundancy
+========================================================
+
+For important data / files, you should develop a backup system.
+
+Example:
+
+- Files in (reliably) organized system on personal computer
+- File system synced automatically to cloud (BoxSync)
+- File system synced periodically to physical device (external hard-drive)
+
+
 STRIPS-2 Data
 ========================================================
 
