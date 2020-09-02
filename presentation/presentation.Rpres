@@ -40,6 +40,44 @@ Example:
 - Scripts and data version control system (**GitHub**)
 
 
+Personal File System
+========================================================
+
+Separate file system into major professional events. Further breakdown by courses, research projects, extracurricular programs, personal files.
+
+**phd**
+- courses
+  - stat_500
+  - stat_510
+- research
+  - bmp
+  - conformal
+- datafewsion
+- personal
+
+
+BoxSync
+========================================================
+
+Iowa State University provides free **unlimited** cloud storage via Box.com
+
+<div align="center">
+<img src="box.png" height=142>
+</div>
+
+A helpful tool to enable automatic backup of your data to Box.com, is to use BoxSync.
+- Store folders / files you want to backup in the BoxSync folder
+- As you add / edit files in these folders, changes are automatically backed up to Box.com
+
+Follow the link below for more information on installing BoxSync on Windows or Mac computers:
+
+https://support.box.com/hc/en-us/articles/360043697194-Installing-Box-Sync
+
+BoxSync Example
+========================================================
+<img src="boxsync.png">
+
+
 STRIPS-2 Data
 ========================================================
 
