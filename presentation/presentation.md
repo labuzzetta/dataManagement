@@ -13,6 +13,7 @@ The 3 R's of Data Management:
 
 - Redundancy
   - **Backup** your data safely!
+  - Use GitHub to **track changes** to files.
 - Reliability
   - **Organize** your files for efficient access
   - Never change your **raw data** directly
@@ -22,7 +23,7 @@ The 3 R's of Data Management:
   - Provide **public access** (when applicable)
   
   
-Redundancy
+Redundancy: Backup
 ========================================================
 incremental: true
 
@@ -40,7 +41,7 @@ Example:
 - Scripts and data version control system (**GitHub**)
 
 
-Personal File System
+Reliability: Personal File System
 ========================================================
 
 Separate file system into major professional events. Further breakdown by courses, research projects, extracurricular programs, personal files.
@@ -76,6 +77,25 @@ https://support.box.com/hc/en-us/articles/360043697194-Installing-Box-Sync
 BoxSync Example
 ========================================================
 <img src="boxsync.png">
+
+
+Research Data
+========================================================
+
+Within your **backed up** personal file system, you will likely have data related to your research.
+
+After you have a organized file system, you can worry about your research projects:
+
+- Redundancy
+  - Use GitHub to **track changes** to files.
+- Reliability
+  - Never change your **raw data** directly
+- Reproducibility
+  - **Metadata** helps others learn about your data
+  - Communicate edits to raw data via **scripts**
+  - Provide **public access** (when applicable)
+
+
 
 
 STRIPS-2 Data
